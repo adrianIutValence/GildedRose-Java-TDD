@@ -5,6 +5,8 @@ import java.util.List;
 public class GildedRose
 {
 
+	private static final int HOW_MUCH_TIME_QUALITY_DECREASE_WHEN_NOT_OUTDATED = 1;
+	private static final int HOW_MUCH_TIME_QUALITY_DECREASE_WHEN_OUTDATED = 2;
 	private static final int DECREASING_QUALITY_EACH_DAY = 1;
 	private static final int DECREASING_SELLIN_EACH_DAY = 1;
 
@@ -34,8 +36,10 @@ public class GildedRose
 
 	public static void updateItem(Item item)
 	{
-		item.decreaseQualityBy(DECREASING_QUALITY_EACH_DAY);
 		item.decreaseSellInBy(DECREASING_SELLIN_EACH_DAY);
+		item.decreaseQualityBy(DECREASING_QUALITY_EACH_DAY
+				* (item.getSellIn() < 0 ? HOW_MUCH_TIME_QUALITY_DECREASE_WHEN_OUTDATED
+						: HOW_MUCH_TIME_QUALITY_DECREASE_WHEN_NOT_OUTDATED));
 	}
 
 }

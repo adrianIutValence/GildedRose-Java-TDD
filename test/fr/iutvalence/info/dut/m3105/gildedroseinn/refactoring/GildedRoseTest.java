@@ -9,8 +9,8 @@ import org.junit.Test;
 public class GildedRoseTest {
 
 	public static final int INITIAL_QUALITY = 10;
-	public static final int INITIAL_SELLIN = 10;
-	private static final int NUMBER_DAY_TO_TEST = 3;
+	public static final int INITIAL_SELLIN = 3;
+	private static final int NUMBER_DAY_TO_TEST = 6;
 
 
 
@@ -30,7 +30,7 @@ public class GildedRoseTest {
 		for (int dayNumber = 1; dayNumber < NUMBER_DAY_TO_TEST; dayNumber++) {
 			GildedRose.updateItems(itemsUnderTest);
 			for (Item item : itemsUnderTest) {
-				assertEquals(item.getQuality(), INITIAL_QUALITY - dayNumber);
+				assertEquals(item.getQuality(), INITIAL_QUALITY - dayNumber - (INITIAL_SELLIN<dayNumber ? (INITIAL_SELLIN-dayNumber):0));
 				assertEquals(item.getSellIn(), INITIAL_SELLIN - dayNumber);
 			}
 		}

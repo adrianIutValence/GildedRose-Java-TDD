@@ -16,15 +16,21 @@ public class GildedRose
 	 * items.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)); 
 	 * items.add(new Item("Conjured Mana Cake", 3, 6));
 	 */
-
+	
+	/**
+	 * 
+	 * @param items shouldn't be null
+	 */
 	public static void updateItems(List<Item> items)
 	{
+		assert items != null : "items shouldn't be null";
+		
 		for (int indexInItemList = 0; indexInItemList < items.size(); indexInItemList++)
 			updateItem(items.get(indexInItemList));
 	}
 
 	public static void updateItem(Item item)
-	{	
+	{
 	}
 
 }

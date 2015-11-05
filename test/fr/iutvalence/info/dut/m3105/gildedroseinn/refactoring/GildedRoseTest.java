@@ -30,8 +30,8 @@ public class GildedRoseTest {
 		for (int dayNumber = 1; dayNumber < NUMBER_DAY_TO_TEST; dayNumber++) {
 			GildedRose.updateItems(itemsUnderTest);
 			for (Item item : itemsUnderTest) {
-				assertEquals(String.valueOf(dayNumber), item.getQuality(), INITIAL_QUALITY - dayNumber - (INITIAL_SELLIN<dayNumber ? (dayNumber-INITIAL_SELLIN):0));
-				assertEquals(item.getSellIn(), INITIAL_SELLIN - dayNumber);
+				assertEquals(String.valueOf(dayNumber), INITIAL_QUALITY - dayNumber - (INITIAL_SELLIN<dayNumber ? (dayNumber-INITIAL_SELLIN):0), item.getQuality());
+				assertEquals(INITIAL_SELLIN - dayNumber, item.getSellIn());
 			}
 		}
 	}
@@ -41,7 +41,7 @@ public class GildedRoseTest {
 	public void testingUpdateItemsMethodWithEmptyList(){
 		ArrayList<Item> emptyItemList = new ArrayList<Item>();
 		GildedRose.updateItems(emptyItemList);
-		assertEquals(emptyItemList, new ArrayList<Item>());
+		assertEquals(new ArrayList<Item>(), emptyItemList);
 	}
 
 }

@@ -23,37 +23,37 @@ public class ItemTest {
 		
 		@Test
 		public void testingNameGetter(){
-			assertEquals(this.itemUnderTest.getName(), ITEM_NAME);
+			assertEquals(ITEM_NAME, this.itemUnderTest.getName());
 
 		}
 		
 		@Test
 		public void testingNameSetter(){
 			this.itemUnderTest.setName(OTHER_ITEM_NAME);
-			assertEquals(this.itemUnderTest.getName(), OTHER_ITEM_NAME);
+			assertEquals(OTHER_ITEM_NAME, this.itemUnderTest.getName());
 
 		}
 		
 		@Test
 		public void testingSellInGetter(){
-			assertEquals(this.itemUnderTest.getSellIn(), ITEM_SELLIN);
+			assertEquals(ITEM_SELLIN, this.itemUnderTest.getSellIn());
 		}
 		
 		@Test
 		public void testingSellInSetter(){
 			this.itemUnderTest.setSellIn(OTHER_ITEM_SELLIN);
-			assertEquals(this.itemUnderTest.getSellIn(), OTHER_ITEM_SELLIN);
+			assertEquals(OTHER_ITEM_SELLIN, this.itemUnderTest.getSellIn());
 		}
 		
 		@Test
 		public void testingQualityGetter(){
-			assertEquals(this.itemUnderTest.getQuality(), ITEM_QUALITY);
+			assertEquals(ITEM_QUALITY, this.itemUnderTest.getQuality());
 		}
 		
 		@Test
 		public void testingQualitySetter(){
 			this.itemUnderTest.setQuality(OTHER_ITEM_QUALITY);
-			assertEquals(this.itemUnderTest.getQuality(), OTHER_ITEM_QUALITY);
+			assertEquals(OTHER_ITEM_QUALITY, this.itemUnderTest.getQuality());
 		}
 
 	

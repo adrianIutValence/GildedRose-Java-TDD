@@ -5,6 +5,9 @@ import java.util.List;
 public class GildedRose
 {
 
+	private static final int DECREASING_QUALITY_EACH_DAY = 1;
+	private static final int DECREASING_SELLIN_EACH_DAY = 1;
+
 	/*
 	 * The code below is intended to help writing test fixtures
 	 * 
@@ -31,6 +34,8 @@ public class GildedRose
 
 	public static void updateItem(Item item)
 	{
+		item.setQuality(item.getQuality()-DECREASING_QUALITY_EACH_DAY);
+		item.setSellIn(item.getSellIn()-DECREASING_SELLIN_EACH_DAY);
 	}
 
 }

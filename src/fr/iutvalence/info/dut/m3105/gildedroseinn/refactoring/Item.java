@@ -42,4 +42,12 @@ public class Item
 	{
 		this.quality = quality;
 	}
+
+	public void decreaseQualityBy(int decreasingQuality) {
+		this.quality -= decreasingQuality;
+	}
+
+	public void decreaseSellInBy(int decreasingSellin) {
+		this.sellIn -= decreasingSellin;		
+	}
 }

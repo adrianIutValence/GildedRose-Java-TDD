@@ -4,9 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
-import jdk.internal.org.objectweb.asm.tree.IntInsnNode;
-
-import org.junit.Before;
 import org.junit.Test;
 
 public class GildedRoseTest {
@@ -19,6 +16,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void testingUpdateItemsMethodOnManyDays() {
+		
 		ArrayList<Item> itemsUnderTest = new ArrayList<Item>();
 		itemsUnderTest.add(new Item("+5 Dexterity Vest", INITIAL_QUALITY, INITIAL_SELLIN));
 		itemsUnderTest.add(new Item("Aged Brie", INITIAL_QUALITY, INITIAL_SELLIN));
@@ -28,6 +26,7 @@ public class GildedRoseTest {
 				INITIAL_QUALITY, INITIAL_SELLIN));
 		itemsUnderTest.add(new Item("Conjured Mana Cake", INITIAL_QUALITY, INITIAL_SELLIN));
 		
+		
 		for (int dayNumber = 1; dayNumber < NUMBER_DAY_TO_TEST; dayNumber++) {
 			GildedRose.updateItems(itemsUnderTest);
 			for (Item item : itemsUnderTest) {
@@ -36,6 +35,7 @@ public class GildedRoseTest {
 			}
 		}
 	}
+	
 	
 	@Test
 	public void testingUpdateItemsMethodWithEmptyList(){

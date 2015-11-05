@@ -34,8 +34,8 @@ public class GildedRose
 
 	public static void updateItem(Item item)
 	{
-		item.setQuality(item.getQuality()-DECREASING_QUALITY_EACH_DAY);
-		item.setSellIn(item.getSellIn()-DECREASING_SELLIN_EACH_DAY);
+		item.decreaseQualityBy(DECREASING_QUALITY_EACH_DAY);
+		item.decreaseSellInBy(DECREASING_SELLIN_EACH_DAY);
 	}
 
 }
